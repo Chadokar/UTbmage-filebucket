@@ -1,0 +1,8 @@
+node_modules
+.env
+test.http
+docker-build.sh
+package-lock.json
+uploads
+client_secret_28073425808-e7pf3u6n5flhofkk4gek3uufmn1fbpcl.apps.googleusercontent.com.json
+data.json

@@ -1,0 +1,61 @@
+const express = require("express");
+const { body, header } = require("express-validator");
+const {
+  deleteUser,
+  getAllUsers,
+  deleteChannel,
+  getAllChannels,
+  deleteVideo,
+  getAllVideos,
+  deleteAllVideos,
+} = require("../controllers/admin");
+
+const Router = express.Router();
+
+// get all user
+Router.get(
+  "/users",
+
+  //   [header("Authorization", "Authorization token is required").exists()],
+  getAllUsers
+);
+
+// delete user
+Router.delete(
+  "/user/delete",
+
+  //   [header("Authorization", "Authorization token is required").exists()],
+  deleteUser
+);
+
+// youtube channel routes
+
+// get all channels
+Router.get(
+  "/channels",
+
+  //   [header("Authorization", "Authorization token is required").exists()],
+  getAllChannels
+);
+
+// delete channel
+Router.delete(
+  "/channel/delete",
+
+  //   [header("Authorization", "Authorization token is required").exists()],
+  deleteChannel
+);
+
+// delete video
+Router.delete(
+  "/video/delete",
+
+  //   [header("Authorization", "Authorization token is required").exists()],
+  deleteVideo
+);
+
+Router.delete("/videos/delete", deleteAllVideos);
+
+Router.get("/videos", getAllVideos);
+
+module.exports = Router;
